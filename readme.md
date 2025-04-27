@@ -29,7 +29,7 @@ weather-app/
 
 1. Clone or download this repository
 2. Get an API key from [OpenWeatherMap](https://openweathermap.org/api)
-3. Open `src/js/api.js` and replace `YOUR_API_KEY_HERE` with your actual API key
+3. Open `src/api.js` and replace `YOUR_API_KEY_HERE` with your actual API key
 4. Open `index.html` in your browser or use a local server
 
 ## API Used
