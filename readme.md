@@ -1,6 +1,6 @@
 # Weather App
 
-A simple weather application built with vanilla JavaScript using modern ES6+ features and best practices.
+A simple weather application built with vanilla JavaScript using modern ES6+ features and best practices. It is live at : https://niloy-is-testing.github.io/
 
 ## Features
 
