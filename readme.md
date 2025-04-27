@@ -14,16 +14,14 @@ A simple weather application built with vanilla JavaScript using modern ES6+ fea
 
 ```
 weather-app/
-├── assets/                     # Static assets
-│   ├── images/                 # Images folder
 ├── src/                        # Source code
-|   ├── index.html              # Main HTML file
 |   ├── app.js                  # Main application controller
 │   ├── components/             # JavaScript modules
 │   │   ├── api/api.js          # API interactions
 │   │   ├── ui/ui.js            # UI interactions
 │   │   └── storage/storage.js  # Local storage operations
-|   |── index.css               # Main styles
+|── index.html                  # Main HTML file
+|── index.css                   # Main styles
 └── README.md                   # Project documentation
 ```
 
