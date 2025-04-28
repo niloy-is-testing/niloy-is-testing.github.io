@@ -1,4 +1,4 @@
-import { fetchWeatherData } from './components/api/api.js';
+import { fetchWeatherData } from './components/api/city.js';
 import { UI } from './components/ui/ui.js';
 import { Storage } from './components/storage/storage.js';
 
