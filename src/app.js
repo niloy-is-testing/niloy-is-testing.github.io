@@ -1,55 +1,47 @@
-// Import modules
 import { fetchWeatherData } from './components/api/api.js';
-import { UI } from './components/ui/ui.js';
+import { UI } from './components/UI/UI.js';
 import { Storage } from './components/storage/storage.js';
 
-class WeatherApp {
-    constructor() {
-        this.ui = new UI();
-        
-        // Initialize event listeners
-        this.ui.searchBtn.addEventListener('click', () => this.searchWeather());
-        this.ui.cityInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                this.searchWeather();
-            }
-        });
-  
-        this.loadLastCity();
-    }
+// DOMContentLoaded ensures that the JavaScript doesn’t run before the HTML is ready to be manipulated (no undefined elements).
+document.addEventListener('DOMContentLoaded', () => {
+    setupEventListeners();
+    loadLastCity();
+});
 
-    loadLastCity() {
-        const lastCity = Storage.getLastCity();
-        if (lastCity) {
-            this.ui.setCity(lastCity);
-            this.searchWeather();
+function setupEventListeners() {
+    UI.searchBtn.addEventListener('click', searchWeather);
+    UI.cityInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            searchWeather();
         }
+    });
+}
+
+function searchWeather() {
+    const city = UI.getCity();
+    if (!city) {
+        UI.showError('Please enter a city name');
+        return;
     }
-    
-    searchWeather() {
-        const city = this.ui.getCity();
-        
-        if (!city) {
-            this.ui.showError('Please enter a city name');
-            return;
-        }
-        
-        // Save the city to localStorage
-        Storage.saveCity(city);
-        
-        // Show loading state (could add a loader here)
-        this.ui.clearError();
-        
-        // Fetch weather data
-        fetchWeatherData(city)
-            .then(data => this.ui.displayWeatherData(data))
-            .catch(error => {
-                this.ui.showError(error.message);
-            });
+    Storage.saveCity(city);
+    UI.clearError();
+    fetchWeatherData(city)
+        .then(data => UI.displayWeatherData(data))
+        .catch(error => {
+            UI.showError(error.message);
+        });
+}
+
+function loadLastCity() {
+    const lastCity = Storage.getLastCity();
+    if (lastCity) {
+        UI.setCity(lastCity);
+        searchWeather();
     }
 }
 
-// Initialize the app when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-    const app = new WeatherApp();
-});
+
+
+
+
+

@@ -1,53 +1,58 @@
-export class UI {
-    constructor() {
-        // Cache DOM elements
-        this.cityInput = document.getElementById('city-input');
-        this.searchBtn = document.getElementById('search-btn');
-        this.errorContainer = document.getElementById('error-container');
-        this.weatherContainer = document.getElementById('weather-container');
-        this.cityNameElement = document.getElementById('city-name');
-        this.temperatureElement = document.getElementById('temperature');
-        this.weatherDescriptionElement = document.getElementById('weather-description');
-        this.humidityElement = document.getElementById('humidity');
-        this.windSpeedElement = document.getElementById('wind-speed');
-    }
+// Cache DOM elements (only once)
+const cityInput = document.getElementById('city-input');
+const searchBtn = document.getElementById('search-btn');
+const errorContainer = document.getElementById('error-container');
+const weatherContainer = document.getElementById('weather-container');
+const cityNameElement = document.getElementById('city-name');
+const temperatureElement = document.getElementById('temperature');
+const weatherDescriptionElement = document.getElementById('weather-description');
+const humidityElement = document.getElementById('humidity');
+const windSpeedElement = document.getElementById('wind-speed');
 
-    displayWeatherData(data) {
-        // Extract data
-        const cityName = data.name;
-        const country = data.sys.country;
-        const temperature = Math.round(data.main.temp);
-        const description = data.weather[0].description;
-        const humidity = data.main.humidity;
-        const windSpeed = data.wind.speed;
-        
-        // Update UI
-        this.cityNameElement.textContent = `${cityName}, ${country}`;
-        this.temperatureElement.textContent = `${temperature}°C`;
-        this.weatherDescriptionElement.textContent = description;
-        this.humidityElement.textContent = `${humidity}%`;
-        this.windSpeedElement.textContent = `${windSpeed} m/s`;
-        
-        // Show weather container
-        this.weatherContainer.style.display = 'block';
-    }
-    
-    showError(message) {
-        this.errorContainer.textContent = message;
-        this.errorContainer.style.display = 'block';
-        this.weatherContainer.style.display = 'none';
-    }
+// Functions to handle UI
+function displayWeatherData(data) {
+    const cityName = data.name;
+    const country = data.sys.country;
+    const temperature = Math.round(data.main.temp);
+    const description = data.weather[0].description;
+    const humidity = data.main.humidity;
+    const windSpeed = data.wind.speed;
 
-    clearError() {
-        this.errorContainer.textContent = '';
-        this.errorContainer.style.display = 'none';
-    }
-    
-    getCity() {
-        return this.cityInput.value.trim();
-    }
+    cityNameElement.textContent = `${cityName}, ${country}`;
+    temperatureElement.textContent = `${temperature}°C`;
+    weatherDescriptionElement.textContent = description;
+    humidityElement.textContent = `${humidity}%`;
+    windSpeedElement.textContent = `${windSpeed} m/s`;
 
-    setCity(city) {
-        this.cityInput.value = city;
-    }
+    weatherContainer.style.display = 'block';
 }
+
+function showError(message) {
+    errorContainer.textContent = message;
+    errorContainer.style.display = 'block';
+    weatherContainer.style.display = 'none';
+}
+
+function clearError() {
+    errorContainer.textContent = '';
+    errorContainer.style.display = 'none';
+}
+
+function getCity() {
+    return cityInput.value.trim();
+}
+
+function setCity(city) {
+    cityInput.value = city;
+}
+
+// Export all together
+export const UI = {
+    cityInput,
+    searchBtn,
+    displayWeatherData,
+    showError,
+    clearError,
+    getCity,
+    setCity,
+};
