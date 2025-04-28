@@ -1,5 +1,5 @@
 import { fetchWeatherData } from './components/api/api.js';
-import { UI } from './components/UI/UI.js';
+import { UI } from './components/ui/ui.js';
 import { Storage } from './components/storage/storage.js';
 
 // DOMContentLoaded ensures that the JavaScript doesn’t run before the HTML is ready to be manipulated (no undefined elements).

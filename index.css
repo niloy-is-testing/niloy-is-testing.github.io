@@ -1,5 +1,6 @@
+
 body {
-    background: rgb(87, 109, 220);
+    background: rgb(220, 221, 226);
     min-height: 100vh; /* The content has atleast 100vh height */
     display: flex;
     justify-content: center; /* Center the content horizontally */

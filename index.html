@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8">
+  <title>Weather Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  
+  <style>
+    #map { height: 90vh; }
+    #weather-info { background-color: aqua; color: brown; position: absolute; top: 10px; left: 100px; padding: 10px; z-index: 1000; }
+    button {
+      padding: 12px 20px; /* 12px top and bottom, 20px left and right */
+      background-color: #0083b0;
+      color: white;
+      border: 1px solid #ddd;
+      border-radius: 0 5px 5px 0; /* Rounded corners on the right side where the 0 represents the top left corner, 5px represents the top right corner, 5px represents the bottom right corner, and 0 represents the bottom left corner */
+      cursor: pointer; /* Pointer/hand cursor on hover */
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #006b8f;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="weather-app">
-            <h1>Weather App</h1>
-            <div class="search-container">
-                <input type="text" id="city-input" placeholder="Enter city name...">
-                <button id="search-btn">Search</button>
-            </div>
-            <div class="error-container" id="error-container"></div>
-            <div class="weather-container" id="weather-container">
-                <div class="city-name" id="city-name"></div>
-                <div class="temperature" id="temperature"></div>
-                <div class="weather-description" id="weather-description"></div>
-                <div class="weather-details">
-                    <div class="detail">
-                        <h4>Humidity</h4>
-                        <h4 id="humidity"></h4>
-                    </div>
-                    <div class="detail">
-                        <h4>Wind Speed</h4>
-                        <h4 id="wind-speed"></h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script type="module" src="./src/app.js"></script>
+
+<div id="weather-info">Click to see weather data</div>
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script type="module" src="./src/components/map/map.js"></script>
+<a href="search.html" >
+  <button> Search by city</button>
+</a>
 </body>
 </html>
