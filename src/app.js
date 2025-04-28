@@ -3,9 +3,16 @@ import { UI } from './components/UI/UI.js';
 import { Storage } from './components/storage/storage.js';
 
 // DOMContentLoaded ensures that the JavaScript doesn’t run before the HTML is ready to be manipulated (no undefined elements).
+
 document.addEventListener('DOMContentLoaded', () => {
     setupEventListeners();
     loadLastCity();
+    const checkViewportWidth = () => {
+        if (window.innerWidth < 375) {
+            alert("This website is not accessible on devices with a width less than 375px.");
+        }
+    };
+    setInterval(checkViewportWidth, 1);
 });
 
 function setupEventListeners() {

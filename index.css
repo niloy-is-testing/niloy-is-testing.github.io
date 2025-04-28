@@ -1,29 +1,23 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+body {
+    background: rgb(87, 109, 220);
+    min-height: 100vh; /* The content has atleast 100vh height */
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    /* justify-content and align-items are specifically designed for Flexbox */
 }
 
-body {
-    background: linear-gradient(135deg, #00b4db, #0083b0);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+@media (max-width: 374px) {
+    body {
+        display: none;
+    }
 }
 
 .container {
     width: 100%;
-    max-width: 450px;
-    padding: 20px;
-}
-
-.weather-app {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    max-width: 650px;
+    padding: 20px; 
 }
 
 h1 {
@@ -33,37 +27,39 @@ h1 {
     font-size: 28px;
 }
 
+
+.weather-app {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px; /* Rounded corners by 10 px*/
+    padding: 30px;
+}
+
 .search-container {
-    display: flex;
     margin-bottom: 25px;
+    display: flex; /* Use flexbox to align items in a row */
+    justify-content: center; /* Center the items horizontally */
 }
 
 input {
-    flex: 1;
     padding: 12px;
     border: 1px solid #ddd;
-    border-radius: 5px 0 0 5px;
+    border-radius: 5px;
     font-size: 16px;
-    outline: none;
 }
 
 button {
-    padding: 12px 20px;
+    padding: 12px 20px; /* 12px top and bottom, 20px left and right */
     background-color: #0083b0;
     color: white;
-    border: none;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 0 5px 5px 0; /* Rounded corners on the right side where the 0 represents the top left corner, 5px represents the top right corner, 5px represents the bottom right corner, and 0 represents the bottom left corner */
+    cursor: pointer; /* Pointer/hand cursor on hover */
     font-size: 16px;
-    transition: background-color 0.3s;
 }
-
 button:hover {
     background-color: #006b8f;
 }
-
 .weather-container {
-    display: none;
     text-align: center;
 }
 
@@ -87,32 +83,17 @@ button:hover {
     color: #555;
     text-transform: capitalize;
 }
-
 .weather-details {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
-    padding-top: 20px;
+    /* padding-top: 20px; */
     border-top: 1px solid #eee;
 }
 
 .detail {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     width: 50%;
-}
-
-.detail span:first-child {
-    font-size: 14px;
-    color: #888;
-    margin-bottom: 5px;
-}
-
-.detail span:last-child {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
 }
 
 .error-container {

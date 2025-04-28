@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <!-- <link rel="stylesheet" href="index.css"> -->
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div>
-        <div>
+    <div class="container">
+        <div class="weather-app">
             <h1>Weather App</h1>
-            <div>
+            <div class="search-container">
                 <input type="text" id="city-input" placeholder="Enter city name...">
                 <button id="search-btn">Search</button>
             </div>
@@ -21,18 +21,17 @@
                 <div class="weather-description" id="weather-description"></div>
                 <div class="weather-details">
                     <div class="detail">
-                        <span>Humidity</span>
-                        <span id="humidity"></span>
+                        <h4>Humidity</h4>
+                        <h4 id="humidity"></h4>
                     </div>
                     <div class="detail">
-                        <span>Wind Speed</span>
-                        <span id="wind-speed"></span>
+                        <h4>Wind Speed</h4>
+                        <h4 id="wind-speed"></h4>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <script type="module" src="./src/app.js"></script>
 </body>
 </html>
