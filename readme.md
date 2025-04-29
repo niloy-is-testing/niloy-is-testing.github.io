@@ -4,9 +4,10 @@ A simple weather application built with vanilla JavaScript using modern ES6+ fea
 
 ## Features
 
+- Interative map for getting weather data onclick.
 - Search for weather by city name
-- Displays temperature, weather description, humidity, and wind speed
-- Responsive design for all devices
+- Displays temperature, weather description, humidity, and wind speed as weather data
+- Responsive design for all devices 
 - Saves the last searched city using local storage
 - Modular code organization
 
@@ -17,10 +18,13 @@ weather-app/
 ├── src/                        # Source code
 |   ├── app.js                  # Main application controller
 │   ├── components/             # JavaScript modules
-│   │   ├── api/api.js          # API interactions
+│   │   ├── api                 # API interactions
+            |── city.js
+            └── map.js          
 │   │   ├── ui/ui.js            # UI interactions
 │   │   └── storage/storage.js  # Local storage operations
 |── index.html                  # Main HTML file
+|── search.html                 # search city 
 |── index.css                   # Main styles
 └── README.md                   # Project documentation
 ```
