@@ -7,7 +7,7 @@
   
   <style>
     #map { height: 90vh; }
-    #weather-info { background-color: aqua; color: brown; position: absolute; top: 10px; left: 100px; padding: 10px; z-index: 1000; }
+    #weather-info { background-color: aqua; color: brown; position: absolute; left: 100px; padding: 10px; z-index: 500; }
     button {
       padding: 12px 20px; /* 12px top and bottom, 20px left and right */
       background-color: #0083b0;
@@ -28,7 +28,7 @@
 <div id="map"></div>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script type="module" src="./src/components/api/map.js"></script>
+<script src="./src/components/api/map.js"></script>
 <a href="search.html" >
   <button> Search by city</button>
 </a>

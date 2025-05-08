@@ -9,7 +9,6 @@ const weatherDescriptionElement = document.getElementById('weather-description')
 const humidityElement = document.getElementById('humidity');
 const windSpeedElement = document.getElementById('wind-speed');
 
-// Functions to handle UI
 function displayWeatherData(data) {
     const cityName = data.name;
     const country = data.sys.country;
@@ -39,14 +38,13 @@ function clearError() {
 }
 
 function getCity() {
-    return cityInput.value.trim();
+    return cityInput.value.trim(); // trim cleaning kore, " Dhaka " becomes "Dhaka"
 }
 
 function setCity(city) {
     cityInput.value = city;
 }
 
-// Export all together
 export const UI = {
     cityInput,
     searchBtn,

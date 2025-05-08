@@ -16,8 +16,8 @@ body {
 }
 
 .container {
-    width: 100%;
-    max-width: 650px;
+    width: 100%; /* Full width of the viewport */
+    max-width: 650px; /* reduce it to a smaller size */
     padding: 20px; 
 }
 
