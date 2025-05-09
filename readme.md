@@ -16,6 +16,9 @@ A simple weather application built with vanilla JavaScript using modern ES6+ fea
 ```
 weather-app/
 ├── src/                        # Source code
+│   ├── config/                 # Configuration files (e.g., API key)
+│   ├── public/                 # Static assets (if any)
+|   |       |── search.html
 |   ├── app.js                  # Main application controller
 │   ├── components/             # JavaScript modules
 │   │   ├── api                 # API interactions
@@ -24,7 +27,6 @@ weather-app/
 │   │   ├── ui/ui.js            # UI interactions
 │   │   └── storage/storage.js  # Local storage operations
 |── index.html                  # Main HTML file
-|── search.html                 # search city 
 |── index.css                   # Main styles
 └── README.md                   # Project documentation
 ```
