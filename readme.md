@@ -15,10 +15,10 @@ A simple weather application built with vanilla JavaScript using modern ES6+ fea
 
 ```
 weather-app/
+├── config/                     # Configuration files (e.g., API key)
+├── public/                     # Static assets (if any)
+|   |── search.html
 ├── src/                        # Source code
-│   ├── config/                 # Configuration files (e.g., API key)
-│   ├── public/                 # Static assets (if any)
-|   |       |── search.html
 |   ├── app.js                  # Main application controller
 │   ├── components/             # JavaScript modules
 │   │   ├── api                 # API interactions
