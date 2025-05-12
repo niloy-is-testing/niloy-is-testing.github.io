@@ -49,6 +49,11 @@ This application works in all modern browsers that support ES6+ features:
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
+- 
+## Author
+
+Abir Ashab Niloy
+GitHub: https://github.com/Abir-Ashab/Weather-App
 
 ## License
 
