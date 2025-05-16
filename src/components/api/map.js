@@ -1,0 +1,34 @@
+const map = L.map("map").setView([20, 0], 2); // World view
+
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: 19,
+}).addTo(map);
+
+const apiKey = "1a19e7763c77142fd6b2b5cab6b6ec98";
+
+// On map click
+map.on("click", function (e) {
+  const { lat, lng } = e.latlng;
+  console.log("Clicked at:", lat, lng);
+
+  // Fetch weather info
+  fetch(
+    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${apiKey}&units=metric`
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      const weatherDiv = document.getElementById("weather-info");
+      weatherDiv.innerHTML = `
+          <strong>Weather at (${lat.toFixed(2)}, ${lng.toFixed(
+        2
+      )}):</strong><br>
+          ${data.weather[0].description}<br>
+          Temp: ${data.main.temp}°C<br>
+          Humidity: ${data.main.humidity}%<br>
+          Wind Speed: ${data.wind.speed} m/s
+        `;
+    })
+    .catch((err) => {
+      console.error("Error fetching weather:", err);
+    });
+});
